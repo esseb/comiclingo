@@ -11,6 +11,12 @@ Originally created with [Create React App](https://github.com/facebookincubator/
   - Select emoji flag?
     - Country !== language, but makes for prettier UI
     - Decouple from language selection at least so you can select `lang="fr"` and the Canadian flag for a French-Canadian comic
+- Reading mode lets you read bubble by bubble to make it usable on a mobile
+  - Swipe to next/previous bubble, plus buttons to change page/panel/button manually
+  - Clicking a bubble shows you the translated version of the bubble
+  - Clicking word shows translation from Google Translate (if they have an API...)
+  - Selecting words shows translation from Google Translate (if they have an API...)
+  - Translating bubble, sentence, words, word must be usable/intuitive
 - Clicking an existing comic opens reading mode by default, with a way to toggle edit mode
   - This opens the current bubble in edit mode
 - Start with page 1, panel 1, bubble 1
