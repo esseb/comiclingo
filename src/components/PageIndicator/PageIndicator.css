@@ -1,0 +1,22 @@
+.page-indicator {
+  background-image:
+    linear-gradient(powderblue, powderblue),
+    linear-gradient(powderblue, powderblue),
+    linear-gradient(powderblue, powderblue),
+    linear-gradient(powderblue, powderblue);
+  background-position:
+    2px 2px,
+    19px 2px,
+    2px 29px,
+    19px 29px;
+  background-repeat: no-repeat;
+  background-size: 15px 25px;
+  border: 2px solid black;
+  display: inline-block;
+  font-size: 30px;
+  height: 60px;
+  line-height: 60px;
+  padding: 2px;
+  text-align: center;
+  width: 40px;
+}

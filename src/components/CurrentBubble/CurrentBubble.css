@@ -1,0 +1,12 @@
+.current-bubble {
+  position: relative;
+}
+
+.current-bubble__value {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.current-bubble__value + .current-bubble__value {
+  margin-left: 10px;
+}

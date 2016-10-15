@@ -1,0 +1,14 @@
+.panel-indicator {
+  background-image: linear-gradient(powderblue, powderblue);
+  background-position: 2px 2px;
+  background-repeat: no-repeat;
+  background-size: 62px 52px;
+  border: 2px solid black;
+  display: inline-block;
+  font-size: 30px;
+  height: 60px;
+  line-height: 60px;
+  padding: 2px;
+  text-align: center;
+  width: 70px;
+}

@@ -1,0 +1,25 @@
+.bubble-indicator {
+  display: inline-block;
+  font-size: 30px;
+  height: 60px;
+  line-height: 50px;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  width: 70px;
+  z-index: 0;
+}
+
+.bubble-indicator:before {
+  background-color: white;
+  border-radius: 50%/60%;
+  border: 2px solid black;
+  content: "";
+  display: block;
+  height: 50px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
