@@ -2,10 +2,7 @@ import './App.css';
 
 import React, { Component } from 'react';
 
-import BubbleIndicator from './components/BubbleIndicator/BubbleIndicator';
-import CurrentBubble from './components/CurrentBubble/CurrentBubble';
-import PageIndicator from './components/PageIndicator/PageIndicator';
-import PanelIndicator from './components/PanelIndicator/PanelIndicator';
+import SpeechBubble from './components/SpeechBubble/SpeechBubble';
 import SelectableWords from './components/SelectableWords/SelectableWords';
 
 import logo from './logo.svg';
@@ -23,47 +20,19 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <CurrentBubble page={1} panel={3} bubble={2} />
-        <textarea></textarea>
-        <button>New bubble</button>
-        <button>New panel</button>
-        <button>New page</button>
-
         <h2>Components</h2>
         <div className="app__components">
-          <div className="app__component">
-            <CurrentBubble page={1} panel={3} bubble={2} />
-          </div>
-
-          <div className="app__component">
-            <PageIndicator value={3} />
-          </div>
-
-          <div className="app__component">
-            <PageIndicator value={24} />
-          </div>
-
-          <div className="app__component">
-            <PanelIndicator value={3} />
-          </div>
-
-          <div className="app__component">
-            <PanelIndicator value={24} />
-          </div>
-
-          <div className="app__component">
-            <BubbleIndicator value={3} />
-          </div>
-
-          <div className="app__component">
-            <BubbleIndicator value={24} />
-          </div>
-
           <div className="app__component">
             <SelectableWords
               text="Lorem ipsum dolor sit amet!"
               onSelect={(text) => {console.log(text)}}
             />
+          </div>
+
+          <div className="app__component">
+            <SpeechBubble>
+              <p>Filler text</p>
+            </SpeechBubble>
           </div>
         </div>
       </div>

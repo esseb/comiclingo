@@ -25,7 +25,7 @@ request.post(
       scope : 'http://api.microsofttranslator.com'
     }
   },
-  
+
   // Once we get the access token, translate the text.
   function (error, response, body) {
     if (!error && response.statusCode == 200) {  

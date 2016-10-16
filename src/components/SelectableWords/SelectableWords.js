@@ -82,12 +82,6 @@ class SelectableWords extends Component {
       selected = index >= selectionStart && index <= selectionEnd;
     }
 
-    if (selected) {
-      console.log('index', index)
-      console.log('selectionStart', selectionStart)
-      console.log('selectionEnd', selectionEnd)
-    }
-
     const classes = classNames({
       'selectable-words__word': true,
       'selectable-words__word--selection': selected,
