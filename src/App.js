@@ -6,6 +6,7 @@ import BubbleIndicator from './components/BubbleIndicator/BubbleIndicator';
 import CurrentBubble from './components/CurrentBubble/CurrentBubble';
 import PageIndicator from './components/PageIndicator/PageIndicator';
 import PanelIndicator from './components/PanelIndicator/PanelIndicator';
+import SelectableWords from './components/SelectableWords/SelectableWords';
 
 import logo from './logo.svg';
 
@@ -56,6 +57,13 @@ class App extends Component {
 
           <div className="app__component">
             <BubbleIndicator value={24} />
+          </div>
+
+          <div className="app__component">
+            <SelectableWords
+              text="Lorem ipsum dolor sit amet!"
+              onSelect={(text) => {console.log(text)}}
+            />
           </div>
         </div>
       </div>

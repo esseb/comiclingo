@@ -1,0 +1,24 @@
+.selectable-words {
+  user-select: none;
+}
+
+.selectable-words__word {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+}
+
+.selectable-words__word:hover:after,
+.selectable-words__word--selected:after {
+  background-color: powderblue;
+  border-radius: 15%/50%;
+  bottom: 0;
+  content: "";
+  display: block;
+  left: -0.2em;
+  position: absolute;
+  right: -0.2em;
+  top: 0;
+  z-index: -1;
+}
