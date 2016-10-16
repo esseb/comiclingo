@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SpeechBubble from './SpeechBubble';
+import TranslateBubble from './TranslateBubble';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<SpeechBubble />, div);
+  ReactDOM.render(<TranslateBubble />, div);
 });

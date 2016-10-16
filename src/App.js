@@ -2,8 +2,9 @@ import './App.css';
 
 import React, { Component } from 'react';
 
-import SpeechBubble from './components/SpeechBubble/SpeechBubble';
 import SelectableWords from './components/SelectableWords/SelectableWords';
+import SpeechBubble from './components/SpeechBubble/SpeechBubble';
+import TranslateBubble from './components/TranslateBubble/TranslateBubble';
 
 import logo from './logo.svg';
 
@@ -23,16 +24,23 @@ class App extends Component {
         <h2>Components</h2>
         <div className="app__components">
           <div className="app__component">
+            <h3>TranslateBubble</h3>
+            <TranslateBubble text="Lorem ipsum dolor sit amet!" />
+          </div>
+
+          <div className="app__component">
+            <h3>SpeechBubble</h3>
+            <SpeechBubble>
+              <p>Filler text</p>
+            </SpeechBubble>
+          </div>
+
+          <div className="app__component">
+            <h3>SelectableWords</h3>
             <SelectableWords
               text="Lorem ipsum dolor sit amet!"
               onSelect={(text) => {console.log(text)}}
             />
-          </div>
-
-          <div className="app__component">
-            <SpeechBubble>
-              <p>Filler text</p>
-            </SpeechBubble>
           </div>
         </div>
       </div>
