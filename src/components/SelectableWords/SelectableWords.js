@@ -26,12 +26,31 @@ class SelectableWords extends Component {
   handleMouseDown(event) {
     this.isDragging = true;
 
-    const index = event.target.dataset.wordIndex;
+    let index = event.target.dataset.wordIndex;
     if (typeof index !== 'undefined') {
+      index = parseInt(index, 10);
+
       this.setState({
         selectionInitial: index,
         selectionStart: index,
         selectionEnd: index,
+      });
+    }
+  }
+
+  handleMouseMove(event) {
+    if (this.isDragging === false) {
+      return;
+    }
+
+    let index = event.target.dataset.wordIndex;
+    if (typeof index !== 'undefined') {
+      index = parseInt(index, 10);
+      const {selectionInitial} = this.state;
+
+      this.setState({
+        selectionStart: Math.min(selectionInitial, index),
+        selectionEnd: Math.max(selectionInitial, index)
       });
     }
   }
@@ -54,24 +73,6 @@ class SelectableWords extends Component {
     });
   }
 
-  handleMouseMove(event) {
-    if (this.isDragging === false) {
-      return;
-    }
-
-    const index = event.target.dataset.wordIndex;
-    if (typeof index === 'undefined') {
-      return;
-    }
-
-    const {selectionInitial} = this.state;
-
-    this.setState({
-      selectionStart: Math.min(selectionInitial, index),
-      selectionEnd: Math.max(selectionInitial, index)
-    });
-  }
-
   renderWord(word, index) {
     const {selectionStart, selectionEnd} = this.state;
 
@@ -81,9 +82,17 @@ class SelectableWords extends Component {
       selected = index >= selectionStart && index <= selectionEnd;
     }
 
+    if (selected) {
+      console.log('index', index)
+      console.log('selectionStart', selectionStart)
+      console.log('selectionEnd', selectionEnd)
+    }
+
     const classes = classNames({
       'selectable-words__word': true,
-      'selectable-words__word--selected': selected,
+      'selectable-words__word--selection': selected,
+      'selectable-words__word--selection-start': index === selectionStart,
+      'selectable-words__word--selection-end': index === selectionEnd,
     })
 
     return <span className={classes} data-word-index={index}>{word}</span>;
@@ -100,8 +109,8 @@ class SelectableWords extends Component {
       <div
         className="selectable-words"
         onMouseDown={this.handleMouseDown.bind(this)}
-        onMouseUp={this.handleMouseUp.bind(this)}
         onMouseMove={this.handleMouseMove.bind(this)}
+        onMouseUp={this.handleMouseUp.bind(this)}
       >
         {words.map((word, index) => [
           this.renderWord(word, index), ' '
